@@ -43,7 +43,7 @@ $ git remote -v
 origin   git@github.com:caterinasworld/webdev-lab-notebook.git (fetch)
 origin   git@github.com:caterinasworld/webdev-lab-notebook.git (push)
 
-$ git remote rename origin homework
+$ git remote rename origin labs
 
 $ git remote -v
 labs    git@github.com:caterinasworld/webdev-lab-notebook.git (fetch)
