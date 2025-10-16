@@ -10,30 +10,22 @@
     <main>
       <h1>01 - Form</h1>
       <form action="/submit">
-        <label>
-          Name
-          <input type="text" />
-        </label>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
         <br /><br />
-        <label>
-          Email
-          <input type="text" />
-        </label>
+        <label for="email">Email</label>
+        <input type="text" id="email" />
         <br /><br />
         <fieldset>
           <legend>Favorite Character</legend>
-          <div>
-            <input type="radio" name="character" id="spongebob" />
-            <label for="spongebob">Spongebob</label>
-          </div>
-          <div>
-            <input type="radio" name="character" id="patrick" />
-            <label for="patrick">Patrick</label>
-          </div>
-          <div>
-            <input type="radio" name="character" id="sandy" />
-            <label for="sandy">Sandy</label>
-          </div>
+          <input type="radio" name="character" id="spongebob" />
+          <label for="spongebob">Spongebob</label>
+          <br />
+          <input type="radio" name="character" id="patrick" />
+          <label for="patrick">Patrick</label>
+          <br />
+          <input type="radio" name="character" id="sandy" />
+          <label for="sandy">Sandy</label>
         </fieldset>
         <br />
         <button>Submit</button>
