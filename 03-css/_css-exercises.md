@@ -15,13 +15,13 @@ The colors used in the exercise are listed as CSS custom properties at the top. 
 
 Note: If the screenshot below is too small, you can open the image separately and zoom in.
 
-<img src="../_assets/css-exercises/css-ex01-selectors.png" height=200 alt="screenshot of an exercise">
+<kbd><img src="../_assets/css-exercises/css-ex01-selectors.png" height=200 alt="screenshot of an exercise"></kbd>
 
 ## <a id="ex02"></a> Exercise 02 - Pseudo
 
 Recreate the snapshot below using pseudo elements.
 
-<img src="../_assets/css-exercises/css-ex02-pseudo.png" height=200 alt="screenshot of an exercise">
+<kbd><img src="../_assets/css-exercises/css-ex02-pseudo.png" height=200 alt="screenshot of an exercise"></kbd>
 
 ## <a id="ex03"></a> Exercise 03 - Specificity
 
@@ -51,13 +51,13 @@ div ol li ul li ol li ul li a {
 
 Recreate the snapshot below using the 'box-sizing' and 'display' properties.
 
-<img src="../_assets/css-exercises/css-ex04-layout-02.png" height=200 alt="screenshot of a layout" style="border: 1px solid black;">
+<kbd><img src="../_assets/css-exercises/css-ex04-layout-02.png" height=200 alt="screenshot of a layout" style="border: 1px solid black;"></kbd>
 
 ## <a id="ex05"></a> Exercise 05 - Position
 
 Recreate the snapshot below using the 'position' property. Use all four 'position' values, as indicated in the screenshots.
 
-<img src="../_assets/css-exercises/css-ex05-position-02.png" height=300 alt="screenshot of a layout">
+<kbd><img src="../_assets/css-exercises/css-ex05-position-02.png" height=300 alt="screenshot of a layout"></kbd>
 
 ## <a id="ex06"></a> Exercise 06 - Media Queries
 
