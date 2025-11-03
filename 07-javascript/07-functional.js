@@ -24,7 +24,7 @@ const mapNameFamily = (characters) => {
   // Format: "Arya, of House Stark"
 
   const results = [];
-  for (character of characters) {
+  for (let character of characters) {
     results.push(`${character.name}, of House ${character.house}`);
   }
 
@@ -35,7 +35,7 @@ const filterFamily = (characters, house) => {
   // Return an array with only the characters from a given house
 
   results = [];
-  for (character of characters) {
+  for (let character of characters) {
     if (character.house == house) {
       results.push(character);
     }
@@ -48,7 +48,7 @@ const reduceHouses = (characters) => {
   // Return an object with the number of characters from each house
 
   results = {};
-  for (character of characters) {
+  for (let character of characters) {
     const { house } = character;
     if (!results.hasOwnProperty(house)) {
       // If key doesn't exist, add it

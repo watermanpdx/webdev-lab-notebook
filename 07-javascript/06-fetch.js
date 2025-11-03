@@ -54,7 +54,7 @@ const fetchData = (url) => {
       loading.remove();
 
       // Parse book data and insert to dom
-      for (bookData of data) {
+      for (let bookData of data) {
         app.append(buildBook(bookData));
       }
     })
