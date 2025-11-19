@@ -23,41 +23,31 @@ const mapNameFamily = (characters) => {
   // Return an array with the name and house of each character
   // Format: "Arya, of House Stark"
 
-  const results = [];
-  for (let character of characters) {
-    results.push(`${character.name}, of House ${character.house}`);
-  }
+  const nameFamily = characters.map(
+    (item) => `${item.name}, of House ${item.house}`
+  );
 
-  return results;
+  return nameFamily;
 };
 
 const filterFamily = (characters, house) => {
   // Return an array with only the characters from a given house
 
-  results = [];
-  for (let character of characters) {
-    if (character.house == house) {
-      results.push(character);
-    }
-  }
+  const houses = characters.filter((item) => item.house === house);
 
-  return results;
+  return houses;
 };
 
 const reduceHouses = (characters) => {
   // Return an object with the number of characters from each house
 
-  results = {};
-  for (let character of characters) {
-    const { house } = character;
-    if (!results.hasOwnProperty(house)) {
-      // If key doesn't exist, add it
-      results[house] = 0;
-    }
-    results[house] += 1; // Update count
-  }
+  const houses = characters.reduce((acc, curr) => {
+    acc.hasOwnProperty(curr.house) ? acc[curr.house]++ : (acc[curr.house] = 1);
 
-  return results;
+    return acc;
+  }, {});
+
+  return houses;
 };
 
 console.log(mapNameFamily(characters));

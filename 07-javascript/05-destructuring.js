@@ -4,7 +4,7 @@ const destructureItems = (input) => {
   const { first, last } = input;
   const { mother, father } = input.allegiance.parents;
 
-  result = `${first} ${last}
+  const result = `${first} ${last}
     daughter of
     ${mother} and ${father}`;
 

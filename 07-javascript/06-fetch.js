@@ -1,39 +1,30 @@
 const url = "https://anapioficeandfire.com/api/books/";
 
 const app = document.querySelector("#books");
-const loading = document.querySelector("#loading");
 
-const buildBook = (bookData) => {
-  // Destructure book info from json
-  const { name, authors, released, numberOfPages } = bookData;
+const addBookToDOM = (book) => {
+  let element = document.createElement("div");
+  let title = document.createElement("div");
+  let author = document.createElement("p");
+  let released = document.createElement("p");
+  let pages = document.createElement("p");
 
-  // Create root book div
-  const book = document.createElement("div");
-  book.setAttribute("class", "book text-center");
+  title.textContent = book.name;
+  author.textContent = book.authors[0];
+  released.textContent = book.released.substr(0, 4);
+  pages.textContent = `${book.numberOfPages} pages`;
 
-  // Create title div
-  const title = document.createElement("div");
-  title.setAttribute("class", "fs-4");
-  title.textContent = name;
+  element.append(title);
+  element.append(author);
+  element.append(released);
+  element.append(pages);
 
-  // Create author div
-  const author = document.createElement("div");
-  author.setAttribute("class", "mb-3");
-  author.textContent = `by ${authors[0]}`; // Assume only one author/only display 1st author
+  element.style.display = "flex";
+  element.style.flexDirection = "column";
+  element.style.alignItems = "center";
+  element.style.marginTop = "20px";
 
-  // Create publication year div
-  const year = document.createElement("div");
-  year.setAttribute("class", "mb-3");
-  year.textContent = released.split("-")[0]; // Assume data always in format: YYYY-MM-DDTHH:MM:SS
-
-  // Create page-length div
-  const pages = document.createElement("div");
-  pages.setAttribute("class", "mb-3");
-  pages.textContent = `${numberOfPages} pages`;
-
-  // Insert child elements and return
-  book.append(title, author, year, pages);
-  return book;
+  app.append(element);
 };
 
 const fetchData = (url) => {
@@ -42,25 +33,22 @@ const fetchData = (url) => {
   // Update the styles in JavaScript to center all the books in the container given
 
   fetch(url)
-    .then((response) => {
-      // Check if valid response and then convert to json
-      if (!response) {
-        throw new Error(`Unexpected response: ${response.statusText}`);
-      }
-      return response.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
-      // Remove loading element
-      loading.remove();
+      console.log(data);
 
-      // Parse book data and insert to dom
-      for (let bookData of data) {
-        app.append(buildBook(bookData));
-      }
+      data.forEach((book) => {
+        addBookToDOM(book);
+      });
     })
     .catch((error) => {
-      // Handle errors/failures
-      console.error(`Enexpected failure in fetch(${url}): ${error}`);
+      let element = document.createElement("div");
+      element.textContent = "An error occured. Please reload the page.";
+      app.append(element);
+    })
+    .finally(() => {
+      let loader = document.querySelector("#loading");
+      app.removeChild(loader);
     });
 };
 
